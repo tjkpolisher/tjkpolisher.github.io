@@ -1,0 +1,34 @@
+version: '2'
+
+services:
+  nginx-proxy:
+    image: nginxproxy/nginx-proxy
+    ports:
+      - "80:80"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+
+  tjkpolisher:
+    image: tjkpolisher/tjkpolisher.github.io
+    expose:
+      - "8000"
+    environment:
+      - VIRTUAL_HOST=tjkpolisher.example
+      - VIRTUAL_PORT=8000
+      
+  8trider:
+    image: seohyeongwon/8trider.github.io:1.1.0
+    expose:
+      - "8000"
+    environment:
+      - VIRTUAL_HOST=8trider.example
+      - VIRTUAL_PORT=8000
+
+  doxgxxn:
+    image: oelrm/doxgxxn.github.io
+    expose:
+      - "8000"
+    environment:
+      - VIRTUAL_HOST=doxgxxn.example
+      - VIRTUAL_PORT=8000
+  
