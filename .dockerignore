@@ -1,1 +1,3 @@
 fly.toml
+dockerfile/lb_nginx/default.conf
+dockerfile/lb_nginx/Dockerfile

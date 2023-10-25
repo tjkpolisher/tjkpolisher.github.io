@@ -11,24 +11,24 @@ services:
   tjkpolisher:
     image: tjkpolisher/tjkpolisher.github.io
     expose:
-      - "8000"
+      - "80"
     environment:
-      - VIRTUAL_HOST=tjkpolisher.example
-      - VIRTUAL_PORT=8000
+      - VIRTUAL_HOST=tjk.google.com
+      - VIRTUAL_PORT=80
       
   8trider:
     image: seohyeongwon/8trider.github.io:1.1.0
     expose:
-      - "8000"
+      - "80"
     environment:
       - VIRTUAL_HOST=8trider.example
-      - VIRTUAL_PORT=8000
+      - VIRTUAL_PORT=80
 
   doxgxxn:
     image: oelrm/doxgxxn.github.io
     expose:
-      - "8000"
+      - "80"
     environment:
-      - VIRTUAL_HOST=doxgxxn.example
-      - VIRTUAL_PORT=8000
+      - VIRTUAL_HOST=doxgxxn.org
+      - VIRTUAL_PORT=80
   
