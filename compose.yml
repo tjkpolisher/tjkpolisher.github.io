@@ -11,24 +11,34 @@ services:
   tjkpolisher:
     image: tjkpolisher/tjkpolisher.github.io
     expose:
-      - "8000"
+      - "80"
     environment:
-      - VIRTUAL_HOST=tjkpolisher.example
-      - VIRTUAL_PORT=8000
-      
-  8trider:
-    image: seohyeongwon/8trider.github.io:1.1.0
-    expose:
-      - "8000"
-    environment:
-      - VIRTUAL_HOST=8trider.example
-      - VIRTUAL_PORT=8000
+      - VIRTUAL_HOST=tjk.com
+      - VIRTUAL_PORT=80
+    deploy:
+      mode: replicated
+      replicas: 1  # https://docs.docker.com/compose/compose-file/deploy/#replicas
+      resources:  # https://docs.docker.com/compose/compose-file/compose-file-v3/#resources
+        limits:
+          cpus: '0.04'
+          memory: 50M
+        reservations:
+          cpus: '0.01'
+          memory: 6M
 
-  doxgxxn:
-    image: oelrm/doxgxxn.github.io
-    expose:
-      - "8000"
-    environment:
-      - VIRTUAL_HOST=doxgxxn.example
-      - VIRTUAL_PORT=8000
+  # 8trider:
+  #   image: seohyeongwon/8trider.github.io:1.1.0
+  #   expose:
+  #     - "8000"
+  #   environment:
+  #     - VIRTUAL_HOST=8trider.example
+  #     - VIRTUAL_PORT=8000
+
+  # doxgxxn:
+  #   image: oelrm/doxgxxn.github.io
+  #   expose:
+  #     - "8000"
+  #   environment:
+  #     - VIRTUAL_HOST=doxgxxn.example
+  #     - VIRTUAL_PORT=8000
   
