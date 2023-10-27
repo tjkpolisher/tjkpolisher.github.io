@@ -117,3 +117,6 @@ NOTE: The machines for [app] have services with 'auto_stop_machines = true' that
 
 Visit your newly deployed app at https://tjkpolisher-blog.fly.dev/
 ```
+
+## Load Test
+The Load Test with [nGrinder](https://github.com/naver/ngrinder) was operated. It is the aim of the test to achieve TPS over 150 with stable response speed. If you'd like to see the result, you can figure it out in [this link](https://github.com/dj-twenty-six/PoC-REPORT/issues/4). Also, the configuration of the resources such as CPU and RAM restriction can be seen in `compose.yaml` file.
